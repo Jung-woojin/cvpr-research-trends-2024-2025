@@ -9,13 +9,21 @@ CVPR/ICCV/ECCV 논문 동향을 "느낌"이 아닌 재현 가능한 방식으로
 - 2차 메타데이터: taxonomy 기반 theme tags
 
 ## 3) 데이터 수집
-- 기본 소스: OpenAccess(The CVF) 컨퍼런스 페이지
+- 기본 소스:
+  - CVPR/ICCV: OpenAccess(The CVF)
+  - ECCV 2024: ECVA virtual papers 페이지
 - 수집 스크립트: `analysis/fetch_openaccess_papers.py`
-- 기본 산출물: `data/raw/papers_openaccess.csv`
+- abstract 보강: `analysis/enrich_abstracts.py`
+- 기본 산출물:
+  - `data/raw/papers_openaccess.csv`
+  - `data/raw/papers_with_abstracts.csv`
 
 ## 4) 분류 기준 (taxonomy)
 - 분류 파일: `taxonomy/cv_taxonomy_v1.yaml`
-- 방식: 제목 기반 키워드 매칭 (다중 태깅 허용)
+- 방식:
+  - 기본: 제목 기반 키워드 매칭
+  - 확장: 제목 + abstract 가중 점수 매칭 (`classify_with_abstract.py`)
+- 다중 태깅 허용
 - 예:
   - `3d_vision`: `3d`, `neural rendering`, `gaussian splatting`, `slam`
   - `multimodal_vlm`: `vision-language`, `multimodal`, `vlm`, `clip`
@@ -34,7 +42,7 @@ CVPR/ICCV/ECCV 논문 동향을 "느낌"이 아닌 재현 가능한 방식으로
 4. "인기"와 "중요도"는 다름 (산업 파급, 재현성, 하드웨어 비용 등 별도 판단 필요)
 
 ## 7) 개선 계획
-- abstract 기반 분류(규칙 + 임베딩 분류기) 추가
+- abstract 임베딩 기반 분류(규칙 + 임베딩 하이브리드) 추가
 - 코드/모델 공개 여부, 벤치마크 영향도 지표 추가
 - ICCV/ECCV 포함 교차 venue normalization
 - 트렌드와 실환경 태스크(robustness, edge, small object) 연결 분석 강화

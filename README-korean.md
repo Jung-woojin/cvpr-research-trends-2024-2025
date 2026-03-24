@@ -43,16 +43,25 @@ reports/
 ## 빠른 실행
 ```powershell
 python -m pip install -r requirements.txt
-python .\analysis\fetch_openaccess_papers.py --venues CVPR2024 CVPR2025
-python .\analysis\classify_with_taxonomy.py
-python .\analysis\build_trend_report.py
+python .\analysis\fetch_openaccess_papers.py --venues CVPR2024 CVPR2025 ICCV2025 ECCV2024
+python .\analysis\enrich_abstracts.py --input data/raw/papers_openaccess.csv --output data/raw/papers_with_abstracts.csv --workers 12
+python .\analysis\classify_with_abstract.py --input data/raw/papers_with_abstracts.csv
+python .\analysis\build_trend_report.py --tagged data/processed/papers_tagged_abstract.csv --summary data/reports/trend_summary_by_theme_abstract.csv
+python .\analysis\build_cross_venue_report.py --summary data/reports/trend_summary_by_theme_abstract.csv
 ```
+
+참고:
+- abstract 수집은 요청 수가 커서 시간이 오래 걸릴 수 있음
+- 빠른 테스트는 `--max-papers 1000`, 전체 수집은 `--max-papers 0` 권장
 
 생성 파일 예시:
 - `data/raw/papers_openaccess.csv`
+- `data/raw/papers_with_abstracts.csv`
 - `data/processed/papers_tagged.csv`
-- `data/reports/trend_summary_by_theme.csv`
+- `data/processed/papers_tagged_abstract.csv`
+- `data/reports/trend_summary_by_theme_abstract.csv`
 - `reports/auto-trend-report-ko.md`
+- `reports/2024-2025/cross-venue-cvpr-iccv-eccv-ko.md`
 
 ## 확장 계획 (ICCV/ECCV)
 1. `fetch_openaccess_papers.py`에 `ICCV2025`, `ECCV2024` 추가 실행
