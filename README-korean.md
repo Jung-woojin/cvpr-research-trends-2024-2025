@@ -71,5 +71,6 @@ python .\analysis\build_cross_venue_report.py --summary data/reports/trend_summa
 
 ## 읽기 권장 순서
 1. [docs/methodology.md](./docs/methodology.md)
-2. [reports/2024-2025/deep-dive-ko.md](./reports/2024-2025/deep-dive-ko.md)
-3. `analysis/` 스크립트 실행 후 자동 보고서 확인
+2. [reports/2024-2025/trend-directions-ko.md](./reports/2024-2025/trend-directions-ko.md)
+3. [reports/2024-2025/deep-dive-ko.md](./reports/2024-2025/deep-dive-ko.md)
+4. `analysis/` 스크립트 실행 후 자동 보고서 확인
