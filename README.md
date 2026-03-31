@@ -241,7 +241,7 @@ Vision Backbone → Projection Layer → LLM
 - **Reasoning**: Task planning, decomposition
 - **Tool Use**: API calls, code execution
 - **Memory**: Long-horizon context
-- **Multi-modal**: Text, vision, action
+- **Multi-modal**: Unified understanding
 
 **Task Performance:**
 
@@ -503,13 +503,12 @@ Vision Backbone → Projection Layer → LLM
 1. **Embodied AI Integration**: Robotics mainstream
 2. **Neural-Symbolic AI**: Reasoning + learning
 3. **Sustainable AI**: Green computing
-4. **Multimodal Fusion**: Unified perception
+4. **Human-AI Collaboration**: Seamless interaction
 
 ### Long-term (2030+)
 1. **General Visual Intelligence**: Human-level vision
 2. **Autonomous Systems**: Self-improving AI
-3. **Human-AI Collaboration**: Seamless interaction
-4. **Universal Visual Understanding**: All-encompassing
+3. **Universal Visual Understanding**: All-encompassing
 
 ---
 
